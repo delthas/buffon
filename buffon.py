@@ -42,12 +42,12 @@ def runTests(maxNeedlesNbr, testsNbr):
 
 	needlesStep = maxNeedlesNbr // testsNbr
 	needlesNbr = needlesStep
-	o = 'Needles;Experimental;Theorical;PI;Error\n'
+	o = 'Needles,Experimental,Theorical,PI,Error\n'
 	for i in range(testsNbr):
 		print('Simulating '+str(needlesNbr)+' needles...')
 		intersects, expFreq, thFreq = buffon(needlesNbr, 10, 10)
 		piEst = 2 * 10 / (expFreq * 10)
-		o += str(needlesNbr)+';'+str(expFreq)+';'+str(thFreq)+';'+str(piEst)+';'+str(abs((expFreq - thFreq) / thFreq))+'\n'
+		o += str(needlesNbr)+','+str(expFreq)+','+str(thFreq)+','+str(piEst)+','+str(abs((expFreq - thFreq) / thFreq))+'\n'
 
 		needlesNbr += needlesStep
 
